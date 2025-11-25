@@ -309,7 +309,7 @@ sudo ufw reload
 
 ```bash
 
-sudo hostnamectl set-hostname swarm-manager                     26.1.0
+sudo hostnamectl set-hostname swarm-manager
 
 ```
 
