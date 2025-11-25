@@ -184,17 +184,17 @@ docker swarm init --advertise-addr 192.168.56.101
 
 Copy the output! It will give you the command and token for your workers to join. It will look like this:
 
-```bash
-
 Swarm initialized: current node (abc123...) is now a manager.
 
 To add a worker to this swarm, run the following command:
 
+```bash
     docker swarm join --token SWMTKN-1-xxxxxxxxx 192.168.56.101:2377
+```
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
 
-```
+
 
     Note: If you lose the token, you can get it again by running this on the manager: docker swarm join-token worker
 
