@@ -286,7 +286,7 @@ sudo ufw reload
 
 ```
 
-## To change the HostName
+## 🛑 To change the HostName
 
 1. Use the command
 
