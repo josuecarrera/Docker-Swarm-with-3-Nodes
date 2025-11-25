@@ -89,3 +89,42 @@ Now that you have a base VM, shut it down and clone it.
 4. Choose "Full Clone" or "Linked Clone" (Linked is faster and saves space, but relies on the original).
 
 Repeat the cloning process to create swarm-worker-2.
+
+## Configure Worker VMs
+
+Boot up swarm-worker-1 and swarm-worker-2 one at a time and make two small changes on each:
+
+1. Change the hostname:
+
+```bash
+
+# On swarm-worker-1
+sudo hostnamectl set-hostname swarm-worker-1
+# On swarm-worker-2
+sudo hostnamectl set-hostname swarm-worker-2
+
+```
+
+2. Change the static IP: Edit the netplan file (sudo nano /etc/netplan/00-installer-config.yaml) and change only the IP address.
+
+    On swarm-worker-1: Use 192.168.56.102/24
+
+    On swarm-worker-2: Use 192.168.56.103/24
+
+    Apply the changes on each: sudo netplan apply
+
+At this point, you should be able to ping all nodes from each other using their 192.168.56.x addresses. For example, from the manager: ping 192.168.56.102
+
+## Step 3: Install Docker (On ALL 3 Nodes)
+
+Run these commands on swarm-manager, swarm-worker-1, and swarm-worker-2.
+
+1. Update packages:
+
+
+```bash
+
+sudo apt update
+sudo apt install -y ca-certificates curl
+
+```
