@@ -48,11 +48,13 @@ Log into the VM and configure the Host-Only interface (`enp0s8` usually).
 ```bash
 sudo nano /etc/netplan/00-installer-config.yaml
 
+```
+
+# This is the network config written by 'subiquity'
 Modify the file to look like this. This sets the manager's static IP to 192.168.56.101.
 
-
 ```bash
-# This is the network config written by 'subiquity'
+
 network:
   ethernets:
     enp0s3:
@@ -62,3 +64,5 @@ network:
       addresses:
         - 192.168.56.101/24
   version: 2
+
+```
