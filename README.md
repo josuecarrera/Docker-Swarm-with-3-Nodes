@@ -66,3 +66,26 @@ network:
   version: 2
 
 ```
+
+Apply the changes:
+
+```bash
+
+sudo netplan apply
+
+```
+Verify the IP: ip a show enp0s8 should now show 192.168.56.101.
+
+### 4. Clone the VM to Create Workers
+
+Now that you have a base VM, shut it down and clone it.
+
+1. Right-click swarm-manager in VirtualBox and select Clone.
+
+2.  Name: swarm-worker-1
+
+3.  MAC Address Policy: Select Generate new MAC addresses for all network adapters. This is extremely important.
+
+4. Choose "Full Clone" or "Linked Clone" (Linked is faster and saves space, but relies on the original).
+
+Repeat the cloning process to create swarm-worker-2.
