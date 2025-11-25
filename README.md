@@ -172,9 +172,9 @@ newgrp docker
 
 Now for the fun part.
 
-    Log into your swarm-manager node.
+Log into your swarm-manager node.
 
-    Run the docker swarm init command. You must specify the --advertise-addr as the Host-Only IP, not the NAT IP.
+Run the docker swarm init command. You must specify the --advertise-addr as the Host-Only IP, not the NAT IP.
 
 ```bash
 
