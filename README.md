@@ -196,11 +196,11 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 
 
 
-    Note: If you lose the token, you can get it again by running this on the manager: docker swarm join-token worker
+Note: If you lose the token, you can get it again by running this on the manager: docker swarm join-token worker
 
 ## Step 5: Join the Worker Nodes
 
-1. Log into swarm-worker-1.
+1. Log into **swarm-worker-1**.
 2. Paste and run the docker swarm join... command you copied from the manager:
 
 ```bash
@@ -211,7 +211,7 @@ docker swarm join --token SWMTKN-1-xxxxxxxxx 192.168.56.101:2377
 
 It should respond with: This node joined a swarm as a worker.
 
-3. Log into swarm-worker-2 and run the exact same command.
+3. Log into **swarm-worker-2** and run the exact same command.
 
 ```bash
 
