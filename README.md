@@ -2,6 +2,10 @@
 
 This guide outlines the step-by-step process to set up a Docker Swarm cluster using Oracle VirtualBox and Ubuntu Server. We will configure one **Manager** node and two **Worker** nodes.
 
+## 📼 My Channel 
+
+[![Tutorial]]()
+
 ## 📋 Prerequisites
 
 * **Oracle VirtualBox** installed on your host machine.
@@ -277,7 +281,6 @@ All three addresses should show the "Welcome to nginx!" page.
 http://192.168.56.101:5001
 
 ```
-
 
 ##  A Note on Firewalls
 
