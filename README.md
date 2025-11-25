@@ -1,3 +1,4 @@
+![Docker](./img/DockerSwarm.jpeg)
 # How to Set Up a 3-Node Docker Swarm in VirtualBox
 
 This guide outlines the step-by-step process to set up a Docker Swarm cluster using Oracle VirtualBox and Ubuntu Server. We will configure one **Manager** node and two **Worker** nodes.
