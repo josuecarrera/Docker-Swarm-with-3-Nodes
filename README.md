@@ -189,7 +189,7 @@ Swarm initialized: current node (abc123...) is now a manager.
 To add a worker to this swarm, run the following command:
 
 ```bash
-    docker swarm join --token SWMTKN-1-xxxxxxxxx 192.168.56.101:2377
+docker swarm join --token SWMTKN-1-xxxxxxxxx 192.168.56.101:2377
 ```
 
 To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
@@ -232,5 +232,129 @@ ID                            HOSTNAME          STATUS    AVAILABILITY   MANAGER
 abc123xxxxxxxxxxxxxx * swarm-manager     Ready     Active         Leader           26.1.0
 def456xxxxxxxxxxxxxx          swarm-worker-1    Ready     Active                          26.1.0
 ghi789xxxxxxxxxxxxxx          swarm-worker-2    Ready     Active                          26.1.0
+
+```
+
+The * indicates you are on that node. You should see all 3 nodes as Ready and Active.
+
+2. Deploy a test service: Let's deploy 5 replicas of Nginx.
+
+```bash
+
+docker service create --name my-web --replicas 5 --publish published=8080,target=80 nginx
+
+```
+
+3. Check the service status:
+
+```bash
+
+docker service ls
+docker service ps my-web
+
+```
+The ps (process) command will show you which nodes your 5 Nginx containers are running on.
+
+4. Test the routing mesh: You can access the Nginx service by browsing to **port** 8080 on any node's IP, even one that isn't running an Nginx container.
+
+From your host machine's browser, visit:
+
+```bash
+
+http://192.168.56.101:8080
+
+http://192.168.56.102:8080
+
+http://192.168.56.103:8080
+
+```
+All three addresses should show the "Welcome to nginx!" page.
+
+##  A Note on Firewalls
+
+If you have a firewall like ufw enabled on your Ubuntu VMs, you must open these ports for Swarm to work:
+
+You would run this on all 3 nodes:
+
+```bash
+
+sudo ufw allow 2377/tcp
+sudo ufw allow 7946/tcp
+sudo ufw allow 7946/udp
+sudo ufw allow 4789/udp
+sudo ufw reload
+
+```
+
+## To change the HostName
+
+1. Use the command
+
+```bash
+
+sudo hostnamectl set-hostname swarm-manager                     26.1.0
+
+```
+
+**Note**: You may need to log out and log back in to see the new name in your terminal.
+
+2. To create the new user (docker-admin)
+
+Use the **adduser command**. It's an interactive script that will ask for your password and other details.
+
+```bash
+
+sudo adduser docker-admin             
+
+```
+The system will ask you to create a password for the new user.
+
+Then it will ask for their full name and other optional details. You can press Enter to leave these questions blank.
+
+Confirm that the information is correct.
+
+If you want this new user to have administrator privileges (to be able to use sudo), run this additional command:
+
+```bash
+
+sudo usermod -aG sudo docker-admin          
+
+```
+
+## To install the OpenSSH Server
+
+This is done using the apt package manager.
+
+1. Update your package list:
+
+```bash
+
+sudo apt update         
+
+```
+
+2. Instala el paquete **openssh-server**:
+
+```bash
+
+sudo apt install openssh-server        
+
+```
+
+3. Verifica que el servicio esté corriendo:
+
+```bash
+
+sudo systemctl status ssh      
+
+```
+
+(You should see "active (running)" in green. Press q to exit.)
+
+4. (Important) If you have the ufw firewall enabled, you need to allow SSH:
+
+```bash
+
+sudo ufw allow ssh    
 
 ```
