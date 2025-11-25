@@ -270,6 +270,15 @@ http://192.168.56.103:8080
 ```
 All three addresses should show the "Welcome to nginx!" page.
 
+**Votes**
+
+```bash
+
+http://192.168.56.101:5001
+
+```
+
+
 ##  A Note on Firewalls
 
 If you have a firewall like ufw enabled on your Ubuntu VMs, you must open these ports for Swarm to work:
