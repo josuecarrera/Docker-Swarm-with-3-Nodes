@@ -8,7 +8,7 @@ This guide outlines the step-by-step process to set up a Docker Swarm cluster us
 
 ## Arquitecture
 
-[!Adapter](./img/Architecture.jpeg)
+![Adapter](./img/Architecture.jpeg)
 
 ## 📋 Prerequisites
 
