@@ -4,7 +4,11 @@ This guide outlines the step-by-step process to set up a Docker Swarm cluster us
 
 ## 📼 My Channel 
 
-![Installation Video]()
+![watch the video tutorial on YouTube]()
+
+## Arquitecture
+
+[!Adapter](./img/Architecture.jpeg)
 
 ## 📋 Prerequisites
 
