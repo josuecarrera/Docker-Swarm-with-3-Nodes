@@ -317,6 +317,7 @@ This YAML defines a classic microservices application architecture:
 
 5. A user accesses the result service to view the final tally, which reads the results from the db (backend network).
 
+[Ver docker-compose.yml](https://github.com/josuecarrera/Docker-Swarm-with-3-Nodes/blob/main/docker-compose.yml)
 
 
 ## 🛑 To change the HostName
