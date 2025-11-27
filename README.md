@@ -319,7 +319,7 @@ This YAML defines a classic microservices application architecture:
 
 [Ver docker-compose.yml](https://github.com/josuecarrera/Docker-Swarm-with-3-Nodes/blob/main/docker-compose.yml)
 
-You would run this comand:
+I would execute this command in swarm-manager:
 
 ```bash
 
