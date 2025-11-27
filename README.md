@@ -319,7 +319,23 @@ This YAML defines a classic microservices application architecture:
 
 [Ver docker-compose.yml](https://github.com/josuecarrera/Docker-Swarm-with-3-Nodes/blob/main/docker-compose.yml)
 
+You would run this comand:
 
+```bash
+
+nano docker-compose.yml
+
+```
+```bash
+
+docker stack deploy -c docker-compose.yml voting_app
+
+```
+
+```bash
+
+docker service ls
+```
 ## 🛑 To change the HostName
 
 1. Use the command
