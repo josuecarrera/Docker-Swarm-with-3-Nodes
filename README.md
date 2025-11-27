@@ -5,7 +5,7 @@ This guide outlines the step-by-step process to set up a Docker Swarm cluster us
 
 ## 📼 My Channel 
 
-![watch the video tutorial on YouTube]()
+![watch the video tutorial on YouTube](https://youtu.be/tLiWz2KOXn4)
 
 ## Arquitecture
 
