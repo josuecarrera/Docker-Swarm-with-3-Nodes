@@ -303,6 +303,22 @@ sudo ufw reload
 
 ```
 
+
+##  Application Flow Summary
+This YAML defines a classic microservices application architecture:
+
+1. A voter accesses the vote service (frontend).
+
+2. The vote service pushes the new vote to the redis queue (frontend network).
+
+3. The worker service pulls the vote from redis (via the frontend network).
+
+4. The worker service persists the vote into the db (PostgreSQL) (via the backend network).
+
+5. A user accesses the result service to view the final tally, which reads the results from the db (backend network).
+
+
+
 ## 🛑 To change the HostName
 
 1. Use the command
